@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────
+   TOROqc Design System — CSS Variables
+   Mirrors tailwind.config.js tokens
+   ───────────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --color-brand:   #CC785C;
+  --color-dark:    #141413;
+  --color-cream:   #F7F5F2;
+  --color-muted:   #E4E4E7;
+  --color-accent:  #5E6AD2;
+  --color-success: #3DAB6B;
+  --color-warning: #F5A623;
+  --color-danger:  #E5484D;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --line-height-body: 1.6;
+  --letter-spacing-heading: -0.02em;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+
+  /* Border */
+  --radius:    8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --header-height: 56px;
+  --content-max:   1280px;
+}
+
+/* ─── Base Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: var(--line-height-body);
+  color: var(--color-dark);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TORO: Never use pure white as page background */
+.page-bg { background-color: var(--color-cream); }
+
+/* ─── Typography Helpers ─── */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-dark);
+}
+
+/* ─── Focus Ring — Accessible + On-brand ─── */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
